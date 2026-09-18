@@ -17,9 +17,17 @@ public class FloatingPrimitives {
         float realFloatNegative = 1.5e-10f; //0.00000000015f;
         System.out.println("realFloatNegative = " + realFloatNegative);
         System.out.println("float bytes : " + Float.BYTES);
-        System.out.println("float bites : " + Float.SIZE);
+        System.out.println("float bits : " + Float.SIZE);
         System.out.println("max value float : " + Float.MAX_VALUE);
         System.out.println("min value float :  " + Float.MIN_VALUE);
+
+        //No `D` is required because a floating-point literal is `double` by default. For example, `3.4028235E38` is a `double`.
+        double realDouble = 3.4028235E39;
+        System.out.println("realDouble = " + realDouble);
+        System.out.println("double bytes : " + Double.BYTES);
+        System.out.println("double bits : " + Double.SIZE);
+        System.out.println("max value double : " + Double.MAX_VALUE);
+        System.out.println("min value double : " + Double.MIN_VALUE);
 
 
     }
