@@ -1,17 +1,21 @@
 package io.github.juandiazdev.fundamentals.variables;
 
 import javax.swing.*;
+import java.util.Scanner;
 
-public class NumberSystemsAndDialogInput {
+public class NumberSystemInputScanner {
     public static void main(String[] args) {
 
-        String strNumber = JOptionPane.showInputDialog(null, "input an integer");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("input an integer");
+
+        String strNumber = scanner.nextLine();
 
         int numberDecimal = 0;
         try {
             numberDecimal = Integer.parseInt(strNumber);
         }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Error: Please input a valid integer");
+            System.out.println("Error: Please input a valid integer");
             main(args);
             System.exit(0);
         }
@@ -20,19 +24,8 @@ public class NumberSystemsAndDialogInput {
 
         String decimalResult = "binary " + numberDecimal + " is : " + Integer.toBinaryString(numberDecimal);
 
-        System.out.println(decimalResult);
-
-        //0b: Tells the compiler to interpret the number as binary.
-        int numberBinary = 0b111110100;
-        System.out.println("numberBinary = " + numberBinary);
 
         String octalResult = "octal number " + numberDecimal + " is " + Integer.toOctalString(numberDecimal);
-
-        System.out.println(octalResult);
-
-        //0: Tells the compiler to interpret the number as octal.
-        int octalNumber = 0764;
-        System.out.println("octalNumber = " + octalNumber);
 
         String hexaResult = "hexadecimal number " + numberDecimal + " is : " + Integer.toHexString(numberDecimal);
         System.out.println(hexaResult);
@@ -46,7 +39,6 @@ public class NumberSystemsAndDialogInput {
         message += "\n" + octalResult;
         message += "\n" + hexaResult;
 
-        JOptionPane.showMessageDialog(null, message);
-
+        System.out.println(message);
     }
 }
