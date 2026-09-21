@@ -1,6 +1,6 @@
 package io.github.juandiazdev.fundamentals.variables;
 
-import javax.swing.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NumberSystemInputScanner {
@@ -9,13 +9,14 @@ public class NumberSystemInputScanner {
         Scanner scanner = new Scanner(System.in);
         System.out.println("input an integer");
 
-        String strNumber = scanner.nextLine();
+       // String strNumber = scanner.nextLine();
 
         int numberDecimal = 0;
         try {
-            numberDecimal = Integer.parseInt(strNumber);
-        }catch (NumberFormatException e){
+            numberDecimal = scanner.nextInt(); //Integer.parseInt(strNumber);
+        }catch (InputMismatchException e){
             System.out.println("Error: Please input a valid integer");
+            scanner.nextLine();
             main(args);
             System.exit(0);
         }
@@ -28,12 +29,6 @@ public class NumberSystemInputScanner {
         String octalResult = "octal number " + numberDecimal + " is " + Integer.toOctalString(numberDecimal);
 
         String hexaResult = "hexadecimal number " + numberDecimal + " is : " + Integer.toHexString(numberDecimal);
-        System.out.println(hexaResult);
-
-        //0x: Tells the compiler to the number as hexadecimal.
-        //Uppercase or Lowercase
-        int hexadecimalNumber = 0x1f4;
-        System.out.println("hexadecimalNumber = " + hexadecimalNumber);
 
         String message = decimalResult;
         message += "\n" + octalResult;
