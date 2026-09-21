@@ -1,4 +1,4 @@
-package io.github.juandiazdev.fundamentals.conversions.strings;
+package io.github.juandiazdev.fundamentals.strings;
 
 public class StringCreation {
     public static void main(String[] args) {
