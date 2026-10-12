@@ -2,7 +2,7 @@ package io.github.juandiazdev.fundamentals.controlflow;
 
 import javax.swing.*;
 
-public class CalculateDaysInMonth {
+public class IfElseCalculateDaysInMonthExample {
 
     public static void main(String[] args) {
 
